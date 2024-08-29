@@ -14,7 +14,7 @@ const Footer = () => {
       <span>0938-209-9774</span>
     </a>
     <a 
-          href="https://www.facebook.com/kennethskiez" 
+          href="https://www.facebook.com/kentuckymachenzie" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="flex items-center space-x-2 hover:text-gray-400"
