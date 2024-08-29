@@ -13,6 +13,15 @@ const Footer = () => {
       <i className="fas fa-phone"></i>
       <span>0938-209-9774</span>
     </a>
+    <a 
+          href="https://www.facebook.com/kennethskiez" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="flex items-center space-x-2 hover:text-gray-400"
+        >
+          <i className="fab fa-facebook-f"></i>
+          <span>Facebook</span>
+        </a>
   </div>
   <p className="mt-4 text-sm">&copy; 2024 KENTUBE. Dawata ko pls.</p>
 </footer>
