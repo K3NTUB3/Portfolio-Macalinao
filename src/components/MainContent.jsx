@@ -25,26 +25,28 @@ const MainContent = () => {
   };
 
   return (
-    <main className="container mx-auto p-8 bg-gradient-to-r from-gray-100 to-gray-200 rounded-lg shadow-lg">
+    <main className="container mx-auto p-8 bg-gradient-to-r from-teal-100 to-teal-200 rounded-lg shadow-lg">
+      {/* Home Section */}
       <section id="home" className="mb-12 p-6 bg-white rounded-lg shadow-md flex items-center gap-8">
-        <img 
-          src={myImage} 
-          alt="Kenneth Macalinao" 
+        <img
+          src={myImage}
+          alt="Kenneth Macalinao"
           className="w-48 h-48 object-contain rounded-lg shadow-lg"
         />
         <div className="flex-1">
-          <h2 className="text-4xl font-extrabold text-gray-900 mb-4">
+          <h2 className="text-4xl font-extrabold text-teal-900 mb-4">
             HELLO! I AM KENNETH MACALINAO.
           </h2>
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">
+          <h2 className="text-3xl font-bold text-teal-800 mb-4">
             A BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY STUDENT.
           </h2>
-          <p className="text-gray-700">
+          <p className="text-teal-700">
             Motivated college intern eager to showcase my programming skills and expand my knowledge through hands-on opportunities.
           </p>
         </div>
       </section>
 
+      {/* Certification Section */}
       <section id="certification" className="mb-12 p-6 bg-white rounded-lg shadow-md">
         <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Certification</h2>
         <div className="flex flex-wrap justify-center gap-12">
@@ -84,78 +86,89 @@ const MainContent = () => {
         </div>
       </section>
 
+      {/* Capstone Project Section */}
       <section id="capstone-project" className="p-6 bg-white rounded-lg shadow-md">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">Project Outputs</h2>
+        <h2 className="text-3xl font-bold text-teal-900 mb-4">Project Outputs</h2>
         <div className="flex justify-center mb-4">
-          <h3 className="text-2xl font-bold text-gray-900 text-center">
-            Capstone Project
-          </h3>
+          <h3 className="text-2xl font-bold text-teal-900 text-center">Capstone Project</h3>
         </div>
         <div className="flex flex-wrap gap-6 justify-center">
           <div className="flex flex-col items-center w-1/2 sm:w-1/3 lg:w-1/4">
-            <img 
-              src={Cap1} 
-              alt="Dashboard Graph for yearly comparison of data" 
+            <img
+              src={Cap1}
+              alt="Dashboard Graph for yearly comparison of data"
               className="w-full h-48 object-contain rounded-lg shadow-lg mb-4 cursor-pointer transition-transform transform hover:scale-110"
               onClick={() => openModal(Cap1)}
             />
-            <p className="text-gray-700 text-center">Dashboard Graph for yearly comparison of data</p>
+            <p className="text-teal-700 text-center">
+              Dashboard Graph for yearly comparison of data
+            </p>
           </div>
           <div className="flex flex-col items-center w-1/2 sm:w-1/3 lg:w-1/4">
-            <img 
+            <img
               src={Cap2}
-              alt="Customizable Graph Data for a specific data date interpretation" 
+              alt="Customizable Graph Data for a specific data date interpretation"
               className="w-full h-48 object-contain rounded-lg shadow-lg mb-4 cursor-pointer transition-transform transform hover:scale-110"
               onClick={() => openModal(Cap2)}
             />
-            <p className="text-gray-700 text-center">Customizable Graph Data for a specific data date interpretation</p>
+            <p className="text-teal-700 text-center">
+              Customizable Graph Data for a specific data date interpretation
+            </p>
           </div>
           <div className="flex flex-col items-center w-1/2 sm:w-1/3 lg:w-1/4">
-            <img 
-              src={Cap3} 
-              alt="Mapping of the coordinates using Leaflet and OpenStreetMap" 
+            <img
+              src={Cap3}
+              alt="Mapping of the coordinates using Leaflet and OpenStreetMap"
               className="w-full h-48 object-contain rounded-lg shadow-lg mb-4 cursor-pointer transition-transform transform hover:scale-110"
               onClick={() => openModal(Cap3)}
             />
-            <p className="text-gray-700 text-center">Mapping of the coordinates using Leaflet and OpenStreetMap</p>
+            <p className="text-teal-700 text-center">
+              Mapping of the coordinates using Leaflet and OpenStreetMap
+            </p>
           </div>
         </div>
       </section>
 
+      {/* Lower Year Projects Section */}
       <section id="lower-year-projects" className="p-6 bg-white rounded-lg shadow-md">
         <div className="flex justify-center mb-4">
-          <h3 className="text-2xl font-bold text-gray-900 text-center">
-            Lower Year School Projects
-          </h3>
+          <h3 className="text-2xl font-bold text-teal-900 text-center">Lower Year School Projects</h3>
         </div>
         <div className="flex flex-wrap gap-6 justify-center">
           <div className="flex flex-col items-center w-1/2 sm:w-1/3 lg:w-1/4">
-            <img 
-              src={proj1} 
-              alt="A simple bus ticketing system using Visual Basic" 
+            <img
+              src={proj1}
+              alt="A simple bus ticketing system using Visual Basic"
               className="w-full h-48 object-contain rounded-lg shadow-lg mb-4 cursor-pointer transition-transform transform hover:scale-110"
               onClick={() => openModal(proj1)}
             />
-            <p className="text-gray-700 text-center">A simple bus ticketing system using Visual Basic</p>
+            <p className="text-teal-700 text-center">
+              A simple bus ticketing system using Visual Basic
+            </p>
           </div>
           <div className="flex flex-col items-center w-1/2 sm:w-1/3 lg:w-1/4">
-            <img 
+            <img
               src={proj2}
-              alt="A simple To-Do List created using JavaScript" 
+              alt="A simple To-Do List created using JavaScript"
               className="w-full h-48 object-contain rounded-lg shadow-lg mb-4 cursor-pointer transition-transform transform hover:scale-110"
               onClick={() => openModal(proj2)}
             />
-            <p className="text-gray-700 text-center">A simple To-Do List created using JavaScript</p>
+            <p className="text-teal-700 text-center">
+              A simple To-Do List created using JavaScript
+            </p>
           </div>
         </div>
       </section>
 
       {/* Modal for Image Zoom */}
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50" onClick={closeModal}>
-          <img 
-            src={modalImageSrc}  
-            alt="Zoomed Image" 
+        <div
+          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50"
+          onClick={closeModal}
+        >
+          <img
+            src={modalImageSrc}
+            alt="Zoomed Image"
             className="max-w-full max-h-full object-contain cursor-pointer"
           />
         </div>
