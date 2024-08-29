@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CyberCisco from '../assets/images/Cisco Certified Support Technician Cybersecurity.png';
 import CyberIT from '../assets/images/Information Technology Specialist in Cybersecurity.png';
 import NetworkingIT from '../assets/images/Information Technology Specialist in Network Security.png';
@@ -11,6 +11,19 @@ import proj2 from '../assets/images/TodoList.png';
 import resume from '../assets/images/Resume.png';
 
 const MainContent = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalImageSrc, setModalImageSrc] = useState('');
+
+  const openModal = (imageSrc) => {
+    setModalImageSrc(imageSrc);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setModalImageSrc('');
+  };
+
   return (
     <main className="container mx-auto p-8 bg-gradient-to-r from-gray-100 to-gray-200 rounded-lg shadow-lg">
       <section id="home" className="mb-12 p-6 bg-white rounded-lg shadow-md flex items-center gap-8">
@@ -39,7 +52,8 @@ const MainContent = () => {
             <img 
               src={CyberCisco}  
               alt="Cisco Certified Support Technician Cyber Security" 
-              className="w-250 h-250 object-contain shadow-lg mb-4" 
+              className="w-250 h-250 object-contain shadow-lg mb-4 cursor-pointer transition-transform transform hover:scale-110" 
+              onClick={() => openModal(CyberCisco)}
             />
             <p className="text-gray-700">
               Cisco Certified Support Technician Cyber Security obtained in 2024
@@ -49,7 +63,8 @@ const MainContent = () => {
             <img 
               src={CyberIT} 
               alt="Information Technology Specialist in Cybersecurity" 
-              className="w-250 h-250 object-contain shadow-lg mb-4"  
+              className="w-250 h-250 object-contain shadow-lg mb-4 cursor-pointer transition-transform transform hover:scale-110" 
+              onClick={() => openModal(CyberIT)}
             />
             <p className="text-gray-700">
               Information Technology Specialist in Cybersecurity obtained in 2024
@@ -59,7 +74,8 @@ const MainContent = () => {
             <img 
               src={NetworkingIT}
               alt="Information Technology Specialist in Network Security" 
-              className="w-250 h-250 object-contain shadow-lg mb-4"  
+              className="w-250 h-250 object-contain shadow-lg mb-4 cursor-pointer transition-transform transform hover:scale-110" 
+              onClick={() => openModal(NetworkingIT)}
             />
             <p className="text-gray-700">
               Information Technology Specialist in Network Security obtained in 2023
@@ -80,7 +96,8 @@ const MainContent = () => {
             <img 
               src={Cap1} 
               alt="Dashboard Graph for yearly comparison of data" 
-              className="w-full h-48 object-contain rounded-lg shadow-lg mb-4"
+              className="w-full h-48 object-contain rounded-lg shadow-lg mb-4 cursor-pointer transition-transform transform hover:scale-110"
+              onClick={() => openModal(Cap1)}
             />
             <p className="text-gray-700 text-center">Dashboard Graph for yearly comparison of data</p>
           </div>
@@ -88,7 +105,8 @@ const MainContent = () => {
             <img 
               src={Cap2}
               alt="Customizable Graph Data for a specific data date interpretation" 
-              className="w-full h-48 object-contain rounded-lg shadow-lg mb-4"
+              className="w-full h-48 object-contain rounded-lg shadow-lg mb-4 cursor-pointer transition-transform transform hover:scale-110"
+              onClick={() => openModal(Cap2)}
             />
             <p className="text-gray-700 text-center">Customizable Graph Data for a specific data date interpretation</p>
           </div>
@@ -96,7 +114,8 @@ const MainContent = () => {
             <img 
               src={Cap3} 
               alt="Mapping of the coordinates using Leaflet and OpenStreetMap" 
-              className="w-full h-48 object-contain rounded-lg shadow-lg mb-4"
+              className="w-full h-48 object-contain rounded-lg shadow-lg mb-4 cursor-pointer transition-transform transform hover:scale-110"
+              onClick={() => openModal(Cap3)}
             />
             <p className="text-gray-700 text-center">Mapping of the coordinates using Leaflet and OpenStreetMap</p>
           </div>
@@ -114,7 +133,8 @@ const MainContent = () => {
             <img 
               src={proj1} 
               alt="A simple bus ticketing system using Visual Basic" 
-              className="w-full h-48 object-contain rounded-lg shadow-lg mb-4"
+              className="w-full h-48 object-contain rounded-lg shadow-lg mb-4 cursor-pointer transition-transform transform hover:scale-110"
+              onClick={() => openModal(proj1)}
             />
             <p className="text-gray-700 text-center">A simple bus ticketing system using Visual Basic</p>
           </div>
@@ -122,25 +142,24 @@ const MainContent = () => {
             <img 
               src={proj2}
               alt="A simple To-Do List created using JavaScript" 
-              className="w-full h-48 object-contain rounded-lg shadow-lg mb-4"
+              className="w-full h-48 object-contain rounded-lg shadow-lg mb-4 cursor-pointer transition-transform transform hover:scale-110"
+              onClick={() => openModal(proj2)}
             />
             <p className="text-gray-700 text-center">A simple To-Do List created using JavaScript</p>
           </div>
         </div>
       </section>
 
-      <section id="project" className="p-6 bg-white rounded-lg shadow-md">
-  <h2 className="text-3xl font-bold text-gray-900 mb-4">Resume</h2>
-  <div className="flex flex-wrap gap-6 justify-center">
-  <div className="flex flex-col items-center text-center w-1/2 sm:w-1/3">
-      <img 
-        src={resume}  
-        alt="Cisco Certified Support Technician Cyber Security" 
-        className="w-50 h-50 object-contain shadow-lg mb-4" 
-      />
-    </div>
-  </div>
-</section>
+      {/* Modal for Image Zoom */}
+      {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50" onClick={closeModal}>
+          <img 
+            src={modalImageSrc}  
+            alt="Zoomed Image" 
+            className="max-w-full max-h-full object-contain cursor-pointer"
+          />
+        </div>
+      )}
     </main>
   );
 };
